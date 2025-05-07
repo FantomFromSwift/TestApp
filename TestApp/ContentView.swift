@@ -1,21 +1,25 @@
-//
-//  ContentView.swift
-//  TestApp
-//
-//  Created by Иван Непорадный on 07.05.2025.
-//
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selectedTab: Int = 1
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack(alignment: .bottom){
+            
+            VStack {
+                Spacer()
+                ZStack{
+                    if selectedTab == 1 {
+                        MainView()
+                    } else if selectedTab == 2{
+                        SettingsView()
+                    }
+                }
+            }
+            CustomTabView(selectedTab: $selectedTab)
         }
-        .padding()
     }
 }
 

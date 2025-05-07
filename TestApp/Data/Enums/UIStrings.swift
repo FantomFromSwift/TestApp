@@ -49,8 +49,8 @@ enum UITranslatorStrings: String, CaseIterable {
     case startSpeak = "Start Speak"
     case recording = "Recording..."
     case processOfTranslation = "Process of translation..."
-    case human = "Human"
-    case pat = "Pat"
+    case human = "HUMAN"
+    case pat = "PET"
 }
 
 enum UITitleStrings: String, CaseIterable {

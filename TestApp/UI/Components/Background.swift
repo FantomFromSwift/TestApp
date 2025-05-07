@@ -8,7 +8,7 @@ struct Background: View {
                     Color.white,
                     Color.green.opacity(0.3)
                 ]),
-                startPoint: .top,
+                startPoint: .topTrailing,
                 endPoint: .bottom
             )
             .ignoresSafeArea()

@@ -33,8 +33,9 @@ struct SwapWordsView: View {
                     .frame(width: 135, height: 61) // Устанавливаем размеры для кнопки с текстом
             }
         }
-        .frame(width: 310, height: 61) // Устанавливаем ширину и высоту HStack
+        .frame(maxWidth: .infinity) // Устанавливаем ширину и высоту HStack
         .background(Color.clear) // Делаем HStack прозрачным
+        .padding(.horizontal, 40)
     }
 }
 

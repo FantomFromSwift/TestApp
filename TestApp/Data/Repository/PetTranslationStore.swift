@@ -1,9 +1,4 @@
-//
-//  PetTranslationStore.swift
-//  TestApp
-//
-//  Created by Иван Непорадный on 07.05.2025.
-//
+
 import Foundation
 
 final class PetTranslationStore {

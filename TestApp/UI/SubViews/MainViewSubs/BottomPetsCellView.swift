@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DualImageCell: View {
+struct BottomPetsCellView: View {
     var onFirstTap: () -> Void = {}
     var onSecondTap: () -> Void = {}
 
@@ -42,7 +42,7 @@ struct DualImageCell: View {
 }
 
 #Preview {
-    DualImageCell(
+    BottomPetsCellView(
         onFirstTap: { print("Image 1 tapped") },
         onSecondTap: { print("Image 5 tapped") }
     )

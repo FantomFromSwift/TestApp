@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PetsCellView: View {
-    
+    var selectedPet: PetType
     var onDogTap: () -> Void
     var onCatTap: () -> Void
     
@@ -17,6 +17,7 @@ struct PetsCellView: View {
                     .frame(width: 70, height: 70)
                     .background(Color(red: 236/255, green: 251/255, blue: 199/255))
                     .cornerRadius(10)
+                    .opacity(selectedPet == .dog ? 1.0 : 0.5)
             }
             
             // CITTY
@@ -29,6 +30,7 @@ struct PetsCellView: View {
                     .frame(width: 70, height: 70)
                     .background(Color(red: 209/255, green: 231/255, blue: 252/255))
                     .cornerRadius(10)
+                    .opacity(selectedPet == .cat ? 1.0 : 0.5)
             }
         }
         .frame(width: 107, height: 176)
@@ -38,11 +40,11 @@ struct PetsCellView: View {
     }
 }
 
-#Preview {
-    PetsCellView(
-            onDogTap: { print("Dog tapped") },
-            onCatTap: { print("Cat tapped") }
-        )
-        .padding()
-        .background(Color.gray.opacity(0.1))
-}
+//#Preview {
+//    PetsCellView(
+//            onDogTap: { print("Dog tapped") },
+//            onCatTap: { print("Cat tapped") }
+//        )
+//        .padding()
+//        .background(Color.gray.opacity(0.1))
+//}
