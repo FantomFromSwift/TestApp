@@ -1,18 +1,29 @@
 import SwiftUI
+import AVFoundation
 
 struct MainView: View {
-    @State private var selectedImageName: String = "doggy" // начальное изображение
+    @StateObject private var viewModel = MainViewViewModel(audioRecorderManager: AudioRecorderManager.shared)
+    @State private var selectedImageName: String = "doggy"
     @State private var selectedPet: PetType = .dog
-
+    @State private var showResultView = false
+    
     var body: some View {
-        ZStack {
+        ZStack (alignment: .top){
             Background()
             VStack(spacing: 50) {
                 LargeText(text: UITitleStrings.translator.rawValue)
                 SwapWordsView()
-
                 HStack {
-                    MicrophoneCell(onTap: {})
+                    MicrophoneCell(
+                        onTap: {
+                            viewModel.startRecording()
+                        },
+                        isRecording: $viewModel.isRecording,
+                        onStopRecording: { 
+                            viewModel.finishRecording(pet: selectedPet, audioId: UUID().uuidString)
+                            showResultView = true
+                        }
+                    )
                     Spacer()
                     PetsCellView(
                         selectedPet: selectedPet,
@@ -28,11 +39,12 @@ struct MainView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 45)
-
+                
                 ImageWithFixedSize(imageName: selectedImageName, width: 184, height: 184)
-
-                Spacer()
             }
+        }
+        .fullScreenCover(isPresented: $showResultView) {
+            ResultView(viewModel: ResultViewModel(petImageName: selectedImageName, selectedPet: selectedPet))
         }
     }
 }

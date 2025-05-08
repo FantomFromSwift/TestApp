@@ -7,7 +7,7 @@ struct PetsCellView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            // DOGGY
+            
             Button(action: onDogTap) {
                 Image("doggy")
                     .resizable()
@@ -20,7 +20,7 @@ struct PetsCellView: View {
                     .opacity(selectedPet == .dog ? 1.0 : 0.5)
             }
             
-            // CITTY
+            
             Button(action: onCatTap) {
                 Image("citty")
                     .resizable()
@@ -39,12 +39,3 @@ struct PetsCellView: View {
         .shadow(color: .black.opacity(0.1), radius: 6, x: 0, y: 3)
     }
 }
-
-//#Preview {
-//    PetsCellView(
-//            onDogTap: { print("Dog tapped") },
-//            onCatTap: { print("Cat tapped") }
-//        )
-//        .padding()
-//        .background(Color.gray.opacity(0.1))
-//}

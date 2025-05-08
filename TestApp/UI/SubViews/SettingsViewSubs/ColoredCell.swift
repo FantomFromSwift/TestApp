@@ -6,7 +6,7 @@ struct ColoredCell: View {
 
     var body: some View {
         HStack {
-            MediumText(text: text) // выводим текст из параметра
+            MediumText(text: text)
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundStyle(.black)

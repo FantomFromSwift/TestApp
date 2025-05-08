@@ -13,7 +13,7 @@ final class AudioRecorderManager: ObservableObject {
 
     private init() {}
 
-    /// Запрашивает разрешение на использование микрофона
+    
     func requestPermission(completion: @escaping (Bool) -> Void) {
         if #available(iOS 17.0, *) {
             AVAudioApplication.requestRecordPermission { granted in
@@ -30,7 +30,7 @@ final class AudioRecorderManager: ObservableObject {
         }
     }
 
-    /// Запускает запись звука с микрофона
+    
     func startRecording() {
         let audioSession = AVAudioSession.sharedInstance()
 
@@ -44,9 +44,9 @@ final class AudioRecorderManager: ObservableObject {
             inputNode = audioEngine.inputNode
             let format = inputNode!.outputFormat(forBus: 0)
 
-            // Подключаем inputNode, без обработки аудио
+            
             inputNode?.installTap(onBus: 0, bufferSize: 1024, format: format) { _, _ in
-                // Обработка аудио нам пока не нужна
+                
             }
 
             audioEngine.prepare()
@@ -58,7 +58,7 @@ final class AudioRecorderManager: ObservableObject {
         }
     }
     
-    /// Останавливает запись
+    
     func stopRecording() {
         inputNode?.removeTap(onBus: 0)
         audioEngine?.stop()

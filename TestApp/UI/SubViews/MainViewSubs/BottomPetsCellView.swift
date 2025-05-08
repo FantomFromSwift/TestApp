@@ -6,7 +6,6 @@ struct BottomPetsCellView: View {
 
     var body: some View {
         HStack(spacing: 100) {
-            // Первая кнопка (image 1)
             Button(action: onFirstTap) {
                 ZStack {
                     Circle()
@@ -19,8 +18,6 @@ struct BottomPetsCellView: View {
                         .frame(width: 40, height: 40)
                 }
             }
-
-            // Вторая кнопка (image 5)
             Button(action: onSecondTap) {
                 ZStack {
                     Circle()

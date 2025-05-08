@@ -2,7 +2,6 @@
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
-    // Функция для получения URL для перехода на страницы (PrivacyPolicy, TermsOfUse)
     func getURL(for setting: UISettingStrings) -> String {
         switch setting {
         case .privacyPolicy:
@@ -14,7 +13,6 @@ class SettingsViewModel: ObservableObject {
         }
     }
 
-    // Функция для создания экрана для каждой кнопки
     func destinationView(for setting: UISettingStrings) -> some View {
         switch setting {
         case .rateUs:

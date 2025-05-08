@@ -2,14 +2,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var selectedTab: Int = 1
     
     var body: some View {
         ZStack(alignment: .bottom){
-            
             VStack {
-                Spacer()
                 ZStack{
                     if selectedTab == 1 {
                         MainView()

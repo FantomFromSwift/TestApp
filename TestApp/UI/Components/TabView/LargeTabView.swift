@@ -11,7 +11,7 @@ struct LargeTabView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 45) {
             
-            // Кнопка Translator
+            
             Button(action: translatorAction) {
                 VStack(spacing: 4) {
                     Image("messages-2")
@@ -22,7 +22,7 @@ struct LargeTabView: View {
                 }
             }
 
-            // Кнопка Clicker
+            
             Button(action: clickerAction) {
                 VStack(spacing: 4) {
                     Image("Group-3")
@@ -32,7 +32,7 @@ struct LargeTabView: View {
                 }
             }
 
-            // Кнопка Sounds
+            
             Button(action: soundsAction) {
                 VStack(spacing: 4) {
                     Image("volume-high")
@@ -43,7 +43,7 @@ struct LargeTabView: View {
                 }
             }
 
-            // Кнопка Articles
+            
             Button(action: articlesAction) {
                 VStack(spacing: 4) {
                     Image("note-2")

@@ -10,12 +10,10 @@ struct SettingsView: View {
                 VStack(spacing: 20) {
                     ForEach(UISettingStrings.allCases, id: \.self) { setting in
                         if setting == .privacyPolicy || setting == .termsOfUse {
-                            // Открытие Safari для Privacy Policy и Terms of Use
                             Link(destination: URL(string: viewModel.getURL(for: setting))!) {
                                 ColoredCell(text: setting.rawValue)
                             }
                         } else {
-                            // Для остальных — переход на новый экран
                             NavigationLink(destination: viewModel.destinationView(for: setting)) {
                                 ColoredCell(text: setting.rawValue)
                             }

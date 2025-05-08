@@ -75,3 +75,7 @@ enum UISettingStrings: String, CaseIterable{
     case termsOfUse = "Terms of Use"
 }
 
+
+enum UIResultStrings: String, CaseIterable{
+    case oneMoreTime = "Repeat"
+}

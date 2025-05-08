@@ -5,13 +5,13 @@ struct TextBox: View {
 
     var body: some View {
         VStack(spacing: -10){
-            SmallText(text: generatedText) // Використовуємо SmallText для відображення тексту
+            SmallText(text: generatedText)
                 .padding()
                 .frame(width: 291, height: 142)
                 .background(Color(red: 214/255, green: 220/255, blue: 255/255))
                 .cornerRadius(16)
                 .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 5)
-                .multilineTextAlignment(.leading) // Додамо вирівнювання тексту по лівому краю, якщо він багаторядковий
+                .multilineTextAlignment(.leading) 
             
             Image("Polygon 2")
                 .frame(maxWidth: .infinity, alignment: .trailing)
